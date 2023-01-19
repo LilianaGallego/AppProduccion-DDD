@@ -1,6 +1,7 @@
 package org.sofka.personal.values;
 
 import co.com.sofka.domain.generic.ValueObject;
+import org.sofka.insumo.values.Clasificacion;
 
 import java.util.Objects;
 
@@ -13,6 +14,19 @@ public class Bpm implements ValueObject<String> {
     }
     @Override
     public String value() {
-        return null;
+        return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Bpm that = (Bpm) o;
+        return Objects.equals(value, that.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
     }
 }
