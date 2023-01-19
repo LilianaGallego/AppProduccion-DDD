@@ -1,4 +1,4 @@
-package org.sofka.insumo.values;
+package org.sofka.pedido.values;
 
 import co.com.sofka.domain.generic.Identity;
 
