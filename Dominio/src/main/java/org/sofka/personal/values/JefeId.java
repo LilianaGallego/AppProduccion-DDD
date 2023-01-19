@@ -1,4 +1,6 @@
 package org.sofka.personal.values;
 
-public class JefeId {
+import co.com.sofka.domain.generic.Identity;
+
+public class JefeId extends Identity {
 }
