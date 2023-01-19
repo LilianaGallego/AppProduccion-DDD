@@ -4,9 +4,31 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * Objeto de valor del AR Insumo
+ *
+ * @version 1.0.0 2023-01-19
+ * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+ * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+
+ * @since 1.0.0
+ */
 public class Clasificacion implements ValueObject<String> {
+    /**
+     * clase de insumo
+     */
     private String clase;
 
+    /**
+     * Método constructor para la clase de insumo
+     *
+     * @param clase peso del item insumo
+     *
+     * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+     * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+     *
+     * @since 1.0.0
+     */
     public Clasificacion(String clase) {
         this.clase = Objects.requireNonNull(clase);
     }
