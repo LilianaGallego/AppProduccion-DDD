@@ -5,12 +5,12 @@ import org.sofka.insumo.values.Disponible;
 import org.sofka.insumo.values.EstadoId;
 import org.sofka.insumo.values.InsumoId;
 
-public class CambiarDispobileDeEstado extends Command {
+public class AgregarEstadoDeEstado extends Command {
     private final InsumoId insumoId;
     private final EstadoId estadoId;
     private final Disponible disponible;
 
-    public CambiarDispobileDeEstado(InsumoId insumoId, EstadoId estadoId, Disponible disponible){
+    public AgregarEstadoDeEstado(InsumoId insumoId, EstadoId estadoId, Disponible disponible){
 
         this.insumoId = insumoId;
         this.estadoId = estadoId;

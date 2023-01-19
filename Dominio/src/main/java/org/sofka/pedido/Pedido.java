@@ -1,14 +1,14 @@
 package org.sofka.pedido;
 
 
-import co.com.sofka.domain.generic.AggregateRoot;
+import co.com.sofka.domain.generic.AggregateEvent;
 import org.sofka.pedido.eventos.PedidoCreado;
 import org.sofka.pedido.values.PedidoId;
 import org.sofka.pedido.entidades.Cliente;
 import org.sofka.pedido.entidades.Estado;
 import org.sofka.pedido.values.Cantidad;
 
-public class Pedido extends AggregateRoot<PedidoId> {
+public class Pedido extends AggregateEvent<PedidoId> {
     protected Estado estado;
     protected Cliente cliente;
     protected Cantidad cantidad;
@@ -18,7 +18,5 @@ public class Pedido extends AggregateRoot<PedidoId> {
         appendChange(new PedidoCreado(cantidad)).apply();
     }
 
-    public Cantidad getCantidad() {
-        return cantidad;
-    }
+
 }
