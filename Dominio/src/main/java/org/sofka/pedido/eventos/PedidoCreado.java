@@ -9,4 +9,8 @@ public class PedidoCreado extends DomainEvent {
         super("org.sofka.pedido.eventos.PedidoCreado");
         this.cantidad = cantidad;
     }
+
+    public Cantidad getCantidad() {
+        return cantidad;
+    }
 }

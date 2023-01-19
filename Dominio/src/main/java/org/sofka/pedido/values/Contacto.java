@@ -1,6 +1,8 @@
 package org.sofka.pedido.values;
 
-public class Contacto {
+import co.com.sofka.domain.generic.ValueObject;
+
+public class Contacto implements ValueObject<Contacto.Props> {
     private final String razonSocial;
     private final String telefono;
     private final String dirección;
@@ -11,5 +13,36 @@ public class Contacto {
         this.telefono = telefono;
         this.dirección = dirección;
         this.ciudad = ciudad;
+    }
+
+    @Override
+    public Props value() {
+        return new Props() {
+            @Override
+            public String razonSocial() {
+                return razonSocial;
+            }
+
+            @Override
+            public String telefono() {
+                return telefono;
+            }
+
+            @Override
+            public String dirección() {
+                return dirección;
+            }
+
+            @Override
+            public String ciudad() {
+                return ciudad;
+            }
+        };
+    }
+    public interface Props{
+        String razonSocial();
+        String telefono();
+        String dirección();
+        String ciudad();
     }
 }
