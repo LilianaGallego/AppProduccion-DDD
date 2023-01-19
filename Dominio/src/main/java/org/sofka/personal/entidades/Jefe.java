@@ -6,14 +6,16 @@ import org.sofka.personal.values.JefeId;
 
 public class Jefe extends Entity<JefeId> {
     private Experiencia experiencia;
+    private JefeId jefeId;
 
-    public Jefe(JefeId entityId, Experiencia experiencia) {
-        super(entityId);
+    public Jefe(JefeId jefeId, Experiencia experiencia) {
+        super(jefeId);
         this.experiencia = experiencia;
     }
 
-    ///FALTA verificar
     public void agregarJefe(JefeId jefeId, Experiencia experiencia){
+        this.jefeId = jefeId;
+        this.experiencia = experiencia;
 
     }
 

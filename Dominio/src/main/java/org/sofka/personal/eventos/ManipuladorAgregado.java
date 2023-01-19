@@ -10,8 +10,16 @@ public class ManipuladorAgregado extends DomainEvent {
 
 
     public ManipuladorAgregado(ManipuladorId manipuladorId, Seccion seccion) {
-        super("org.sofka.personal.eventos.manipuladoragregado");
+        super("org.sofka.personal.eventos.ManipuladorAgregado");
         this.manipuladorId = manipuladorId;
         this.seccion = seccion;
+    }
+
+    public ManipuladorId getManipuladorId() {
+        return manipuladorId;
+    }
+
+    public Seccion getSeccion() {
+        return seccion;
     }
 }

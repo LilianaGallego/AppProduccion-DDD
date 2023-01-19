@@ -10,8 +10,16 @@ public class JefeAgregado extends DomainEvent {
 
 
     public JefeAgregado(JefeId jefeId, Experiencia experiencia) {
-        super("org.sofka.personal.eventos.jefeagregado");
+        super("org.sofka.personal.eventos.JefeAgregado");
         this.jefeId = jefeId;
         this.experiencia = experiencia;
+    }
+
+    public JefeId getJefeId() {
+        return jefeId;
+    }
+
+    public Experiencia getExperiencia() {
+        return experiencia;
     }
 }

@@ -4,11 +4,11 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class BpmPersonal implements ValueObject<String> {
+public class Bpm implements ValueObject<String> {
 
     private final String value;
 
-    public BpmPersonal(String value) {
+    public Bpm(String value) {
         this.value = Objects.requireNonNull(value);
     }
     @Override
