@@ -20,7 +20,7 @@ public class Insumo extends AggregateEvent<InsumoId> {
     protected Clasificacion clasificacion;
     protected Set<Item> items;
     protected Estado estado;
-    protected PedidoId pedidoId;
+    //protected PedidoId pedidoId;
 
 
     public Insumo(InsumoId insumoId, Clasificacion clasificacion) {
