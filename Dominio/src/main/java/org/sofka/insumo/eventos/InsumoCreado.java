@@ -9,4 +9,8 @@ public class InsumoCreado extends DomainEvent {
         super("org.sofka.insumo.eventos.InsumoCreado");
         this.clasificacion = clasificacion;
     }
+
+    public Clasificacion getClasificacion() {
+        return clasificacion;
+    }
 }

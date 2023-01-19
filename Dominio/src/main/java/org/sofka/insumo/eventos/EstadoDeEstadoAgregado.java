@@ -4,12 +4,12 @@ import co.com.sofka.domain.generic.DomainEvent;
 import org.sofka.insumo.values.Disponible;
 import org.sofka.insumo.values.EstadoId;
 
-public class DispobileDeEstadoCambiado extends DomainEvent {
+public class EstadoDeEstadoAgregado extends DomainEvent {
     private final EstadoId estadoId;
     private final Disponible disponible;
 
-    public DispobileDeEstadoCambiado(EstadoId estadoId, Disponible disponible){
-        super("org.sofka.insumo.eventos.DispobileDeEstadoCambiado");
+    public EstadoDeEstadoAgregado(EstadoId estadoId, Disponible disponible){
+        super("org.sofka.insumo.eventos.EstadoDeEstadoAgregado");
         this.estadoId = estadoId;
         this.disponible = disponible;
     }
