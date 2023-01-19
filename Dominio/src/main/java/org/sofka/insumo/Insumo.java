@@ -1,16 +1,17 @@
 package org.sofka.insumo;
 
-import co.com.sofka.domain.generic.AggregateEvent;
+
+import co.com.sofka.domain.generic.AggregateRoot;
 import org.sofka.insumo.entidades.Estado;
 import org.sofka.insumo.entidades.Item;
 import org.sofka.insumo.eventos.InsumoCreado;
 import org.sofka.insumo.values.Clasificacion;
 import org.sofka.insumo.values.InsumoId;
-import org.sofka.insumo.values.PedidoId;
+import org.sofka.pedido.values.PedidoId;
 
 import java.util.Set;
 
-public class Insumo extends AggregateEvent<InsumoId> {
+public class Insumo extends AggregateRoot<InsumoId> {
     protected Clasificacion clasificacion;
     protected Set<Item> items;
     protected Estado estado;
