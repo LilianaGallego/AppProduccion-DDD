@@ -4,9 +4,31 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * Objeto de valor disponible de la entidad estado
+ *
+ * @version 1.0.0 2023-01-19
+ * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+ * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+
+ * @since 1.0.0
+ */
 public class Disponible implements ValueObject<Boolean> {
+    /**
+     * valor que toma true or false
+     */
     private final Boolean value;
 
+    /**
+     * Método constructor para el estado disponible
+     *
+     * @param value true or false
+     *
+     * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+     * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+     *
+     * @since 1.0.0
+     */
     public Disponible(Boolean value) {
         this.value = Objects.requireNonNull(value);
     }

@@ -4,9 +4,31 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * Objeto de valor cantidad de la entidad Item
+ *
+ * @version 1.0.0 2023-01-19
+ * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+ * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+
+ * @since 1.0.0
+ */
 public class Cantidad implements ValueObject<Double> {
+    /**
+     * peso del item insumo
+     */
     private final Double peso;
 
+    /**
+     * Método constructor para la cantidad del item insumo
+     *
+     * @param peso peso del item insumo
+     *
+     * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+     * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+     *
+     * @since 1.0.0
+     */
     public Cantidad(Double peso) {
 
         this.peso = peso;
