@@ -1,7 +1,6 @@
 package org.sofka.personal.comandos;
 
 import co.com.sofka.domain.generic.Command;
-import org.sofka.personal.values.ManipuladorId;
 import org.sofka.personal.values.PersonalId;
 import org.sofka.personal.values.Seccion;
 
