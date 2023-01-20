@@ -26,6 +26,9 @@ public class Bpm implements ValueObject<String> {
         return Objects.equals(value, that.value);
     }
 
+    public static Bpm of(String bpm){
+        return new Bpm(bpm);
+    }
     @Override
     public int hashCode() {
         return Objects.hash(value);

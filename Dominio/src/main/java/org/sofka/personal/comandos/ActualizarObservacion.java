@@ -9,9 +9,10 @@ public class ActualizarObservacion extends Command {
     private final PersonalId personalId;
 
 
-    public ActualizarObservacion(Bpm bpm, PersonalId personalId) {
-        this.bpm = bpm;
+    public ActualizarObservacion( PersonalId personalId,Bpm bpm) {
+
         this.personalId = personalId;
+        this.bpm = bpm;
     }
 
     public Bpm getBpm() {

@@ -40,10 +40,10 @@ public class Personal extends AggregateEvent<PersonalId> {
         return personl;
     }
 
-    public void actualizarObservacion(Bpm bpm){
-        var personalId = new PersonalId();
+    public void actualizarObservacion(PersonalId personalId,Bpm bpm){
+        Objects.requireNonNull(personalId);
         Objects.requireNonNull(bpm);
-        appendChange(new ObservacionActualizada(bpm, personalId)).apply();
+        appendChange(new ObservacionActualizada(personalId,bpm)).apply();
     }
 
 

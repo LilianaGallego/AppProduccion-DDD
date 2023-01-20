@@ -18,7 +18,7 @@ public class PersonalChange extends EventChange {
         });
 
         apply((ObservacionActualizada event)->{
-            personal.actualizarObservacion(event.getBpm());
+            personal.bpm = event.getBpm();
         });
 
         apply((JefeAgregado event) -> {
