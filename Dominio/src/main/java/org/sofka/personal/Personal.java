@@ -41,9 +41,9 @@ public class Personal extends AggregateEvent<PersonalId> {
     }
 
     public void actualizarObservacion(Bpm bpm){
-
+        var personalId = new PersonalId();
         Objects.requireNonNull(bpm);
-        appendChange(new ObservacionActualizada(bpm)).apply();
+        appendChange(new ObservacionActualizada(bpm, personalId)).apply();
     }
 
 
@@ -62,5 +62,7 @@ public class Personal extends AggregateEvent<PersonalId> {
         return manipuladores;
     }
 
-
+    public Bpm getBpm() {
+        return bpm;
+    }
 }
