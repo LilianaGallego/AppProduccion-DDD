@@ -40,21 +40,21 @@ public class Personal extends AggregateEvent<PersonalId> {
         return personl;
     }
 
-    public void actualizarObservacion(Bpm bpm,PersonalId personalId){
-        Objects.requireNonNull(personalId);
+    public void actualizarObservacion(Bpm bpm){
+
         Objects.requireNonNull(bpm);
-        appendChange(new ObservacionActualizada(bpm, personalId)).apply();
+        appendChange(new ObservacionActualizada(bpm)).apply();
     }
 
 
     public void agregarJefe( Experiencia experiencia){
+        Objects.requireNonNull(experiencia);
         var jefeId = new JefeId();
         appendChange(new JefeAgregado(jefeId,experiencia)).apply();
     }
 
-    public void agregarManipulador(ManipuladorId manipuladorId, Seccion seccion){
-        Objects.requireNonNull(manipuladorId);
-        Objects.requireNonNull(seccion);
+    public void agregarManipulador(Seccion seccion){
+        var manipuladorId = new ManipuladorId();
         appendChange(new ManipuladorAgregado(manipuladorId,seccion)).apply();
     }
 

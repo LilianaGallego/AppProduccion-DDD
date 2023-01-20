@@ -17,9 +17,6 @@ public class AgregarJefeDeJefe extends Command {
         return personalId;
     }
 
-    //public JefeId getJefeId() {
-        //return jefeId;
-    //}
 
     public Experiencia getExperiencia() {
         return experiencia;

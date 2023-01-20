@@ -7,17 +7,15 @@ import org.sofka.personal.values.Seccion;
 
 public class AgregarManipuladorDeManipulador extends Command {
     private final PersonalId personalId;
-    private final ManipuladorId manipuladorId;
     private final Seccion seccion;
 
-    public AgregarManipuladorDeManipulador(PersonalId personalId,ManipuladorId manipuladorId, Seccion seccion) {
+    public AgregarManipuladorDeManipulador(PersonalId personalId, Seccion seccion) {
         this.personalId = personalId;
-        this.manipuladorId = manipuladorId;
         this.seccion = seccion;
     }
 
-    public ManipuladorId getManipuladorId() {
-        return manipuladorId;
+    public PersonalId getPersonalId() {
+        return personalId;
     }
 
     public Seccion getSeccion() {
