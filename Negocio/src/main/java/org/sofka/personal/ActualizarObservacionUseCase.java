@@ -9,8 +9,9 @@ public class ActualizarObservacionUseCase extends UseCase<RequestCommand<Actuali
     @Override
     public void executeUseCase(RequestCommand<ActualizarObservacion> actualizarObservacionRequestCommand) {
         var command = actualizarObservacionRequestCommand.getCommand();
-        Personal personal = Personal.from(command.getPersonalId(), repository().getEventsBy(command.getPersonalId().value()));
-        personal.actualizarObservacion(command.getBpm());
+        var personal = Personal.from(command.getPersonalId(),repository().getEventsBy(command.getPersonalId().value()));
+        personal.actualizarObservacion(command.getPersonalId(),command.getBpm());
         emit().onResponse(new ResponseEvents(personal.getUncommittedChanges()));
+
     }
 }
