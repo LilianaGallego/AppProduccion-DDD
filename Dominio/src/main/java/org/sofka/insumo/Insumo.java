@@ -114,7 +114,6 @@ public class Insumo extends AggregateEvent<InsumoId> {
     /**
      * Método para agregar el estado
      *
-     * @param estadoId identificador del estado
      * @param disponible objeto valor del estado
      *
      * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
@@ -122,7 +121,8 @@ public class Insumo extends AggregateEvent<InsumoId> {
      *
      * @since 1.0.0
      */
-    public void agregarEstadoDeEstado(EstadoId estadoId, Disponible disponible){
+    public void agregarEstadoDeEstado(Disponible disponible){
+        var estadoId = new EstadoId();
         Objects.requireNonNull(estadoId);
         Objects.requireNonNull(disponible);
         appendChange(new EstadoDeEstadoAgregado(estadoId,disponible)).apply();
@@ -151,5 +151,7 @@ public class Insumo extends AggregateEvent<InsumoId> {
         return items;
     }
 
-
+    public Clasificacion getClasificacion() {
+        return clasificacion;
+    }
 }

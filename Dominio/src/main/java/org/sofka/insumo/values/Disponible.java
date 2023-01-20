@@ -35,7 +35,7 @@ public class Disponible implements ValueObject<Boolean> {
 
     @Override
     public Boolean value() {
-        return value;
+        return this.value;
     }
 
     @Override
