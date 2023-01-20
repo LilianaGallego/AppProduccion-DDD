@@ -5,6 +5,7 @@ import org.sofka.personal.values.Experiencia;
 import org.sofka.personal.values.JefeId;
 
 public class Jefe extends Entity<JefeId> {
+
     private Experiencia experiencia;
     private JefeId jefeId;
 
