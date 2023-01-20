@@ -10,7 +10,6 @@ import org.sofka.personal.eventos.PersonalCreado;
 import org.sofka.personal.values.Bpm;
 import org.sofka.personal.values.PersonalId;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class CrearPersonalUseCaseTest {
     private CrearPersonalUseCase useCase;

@@ -4,7 +4,6 @@ import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 import org.sofka.personal.comandos.AgregarJefeDeJefe;
-import org.sofka.personal.entidades.Jefe;
 
 public class AgregarJefeDeJefeUseCase extends UseCase<RequestCommand<AgregarJefeDeJefe>, ResponseEvents> {
     @Override
