@@ -45,4 +45,20 @@ public class Contacto implements ValueObject<Contacto.Props> {
         String dirección();
         String ciudad();
     }
+
+    public String getRazonSocial() {
+        return razonSocial;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getDirección() {
+        return dirección;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
 }

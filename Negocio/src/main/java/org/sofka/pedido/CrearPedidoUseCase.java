@@ -9,7 +9,7 @@ public class CrearPedidoUseCase extends UseCase<RequestCommand<CrearPedido>, Res
     @Override
     public void executeUseCase(RequestCommand<CrearPedido> crearPedidoRequestCommand) {
         var command = crearPedidoRequestCommand.getCommand();
-        var pedido = new Pedido(command.getPedidoId(), command.getCantidad());
+        var pedido = new Pedido(command.getPedidoId(), command.getCantidad(), command.getEstado(), command.getCliente());
         emit().onResponse(new ResponseEvents(pedido.getUncommittedChanges()));
 
     }

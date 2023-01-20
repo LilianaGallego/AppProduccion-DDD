@@ -19,9 +19,9 @@ public class Pedido extends AggregateEvent<PedidoId> {
     protected Cliente cliente;
     protected Cantidad cantidad;
 
-    public Pedido(PedidoId pedidoId, Cantidad cantidad) {
+    public Pedido(PedidoId pedidoId, Cantidad cantidad, Estado estado, Cliente cliente) {
         super(pedidoId);
-        appendChange(new PedidoCreado(cantidad)).apply();
+        appendChange(new PedidoCreado(cantidad,estado,cliente)).apply();
     }
     private Pedido(PedidoId pedidoId) {
         super(pedidoId);
