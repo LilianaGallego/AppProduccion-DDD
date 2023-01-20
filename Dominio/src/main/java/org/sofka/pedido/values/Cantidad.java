@@ -4,11 +4,27 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * Objeto de valor cantidad de la entidad Item
+ *
+ * @version 1.0.0 2023-01-19
+ * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+ * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+
+ * @since 1.0.0
+ */
 public class Cantidad implements ValueObject<String> {
+    /**
+     * Cantidad del item
+     */
     private String cantidad;
 
+    /**
+     * Contructor para el objeto de valor Cantidad
+     * @param cantidad cantidad
+     */
     public Cantidad(String cantidad) {
-        this.cantidad = cantidad;
+        this.cantidad = Objects.requireNonNull(cantidad);
     }
 
     @Override

@@ -7,8 +7,17 @@ import org.sofka.pedido.eventos.ClienteDeClienteAgregado;
 import org.sofka.pedido.eventos.ContactoDeClienteActualizado;
 import org.sofka.pedido.eventos.EstadoDeEstadoAgregado;
 import org.sofka.pedido.eventos.PedidoCreado;
-import org.sofka.pedido.values.Completado;
 
+
+/**
+ * Se aplican los eventos del dominio del Pedido
+ *
+ * @version 1.0.0 2023-01-19
+ * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+ * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+
+ * @since 1.0.0
+ */
 public class PedidoChange extends EventChange {
     public PedidoChange(Pedido pedido){
         apply((PedidoCreado event)->{

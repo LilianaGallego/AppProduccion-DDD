@@ -22,7 +22,13 @@ public class CrearInsumo extends Command {
      * Identificador del insumo
      */
     private final InsumoId insumoId;
+    /**
+     * Entidad Item
+     */
     private final Set<Item> items;
+    /**
+     * Entidad Estado
+     */
     private final Estado estado;
     /**
      * Objeto Valor para clasificar el insumo
@@ -33,6 +39,8 @@ public class CrearInsumo extends Command {
      * Método constructor para crear un insumo
      *
      * @param insumoId identificador del insumo
+     * @param items lista de items
+     * @param estado estado del insumo
      * @param clasificacion clasifica el insumo
      *
      * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
@@ -70,11 +78,25 @@ public class CrearInsumo extends Command {
     public Clasificacion getClasificacion() {
         return clasificacion;
     }
-
+    /**
+     * Método para obtener los items
+     * @return Items del insumo
+     * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+     * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+     *
+     * @since 1.0.0
+     */
     public Set<Item> getItems() {
         return items;
     }
-
+    /**
+     * Método para obtener el estado del isnumo
+     * @return <Boolean>Estado del insumo
+     * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+     * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+     *
+     * @since 1.0.0
+     */
     public Estado getEstado() {
         return estado;
     }

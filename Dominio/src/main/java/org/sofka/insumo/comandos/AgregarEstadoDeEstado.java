@@ -2,7 +2,6 @@ package org.sofka.insumo.comandos;
 
 import co.com.sofka.domain.generic.Command;
 import org.sofka.insumo.values.Disponible;
-import org.sofka.insumo.values.EstadoId;
 import org.sofka.insumo.values.InsumoId;
 
 /**

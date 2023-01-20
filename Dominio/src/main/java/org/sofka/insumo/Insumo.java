@@ -9,9 +9,14 @@ import org.sofka.insumo.eventos.DispobileDeEstadoCambiado;
 import org.sofka.insumo.eventos.EstadoDeEstadoAgregado;
 import org.sofka.insumo.eventos.InsumoCreado;
 import org.sofka.insumo.eventos.ItemDelItemAgregado;
-import org.sofka.insumo.values.*;
-import org.sofka.pedido.values.PedidoId;
-import org.sofka.personal.entidades.Manipulador;
+import org.sofka.insumo.values.InsumoId;
+import org.sofka.insumo.values.Clasificacion;
+import org.sofka.insumo.values.Nombre;
+import org.sofka.insumo.values.Cantidad;
+import org.sofka.insumo.values.ItemId;
+import org.sofka.insumo.values.Disponible;
+import org.sofka.insumo.values.EstadoId;
+
 
 import java.util.List;
 import java.util.Objects;
@@ -27,8 +32,8 @@ import java.util.Set;
  * @since 1.0.0
  */
 public class Insumo extends AggregateEvent<InsumoId> {
-    protected Set<Item> items;
-    protected Estado estado;
+
+
     /**
      * Objeto Valor para clasificar el insumo
      */
@@ -36,11 +41,11 @@ public class Insumo extends AggregateEvent<InsumoId> {
     /**
      * Relación 1 a muchos  con la entidad item
      */
-
+    protected Set<Item> items;
     /**
      * Relación 1 a 1 con la entidad Estado
      */
-
+    protected Estado estado;
 
 
 
