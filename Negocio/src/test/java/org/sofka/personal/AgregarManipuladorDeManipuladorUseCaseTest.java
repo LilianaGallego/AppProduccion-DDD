@@ -49,8 +49,9 @@ class AgregarManipuladorDeManipuladorUseCaseTest {
                 .getDomainEvents();
 
         //assert
-        var event = (ManipuladorAgregado)events.get(0);
-        Assertions.assertEquals("nnn", event.getSeccion().value());
+        var event = (ManipuladorAgregado) events.get(0);
+        assertEquals("nnn", event.getSeccion().value());
+        Mockito.verify(repository).getEventsBy("ddddd");
 
     }
 

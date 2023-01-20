@@ -58,5 +58,9 @@ public class Personal extends AggregateEvent<PersonalId> {
         appendChange(new ManipuladorAgregado(manipuladorId,seccion)).apply();
     }
 
+    public Set<Manipulador> getManipuladores(){
+        return manipuladores;
+    }
+
 
 }

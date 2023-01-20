@@ -8,10 +8,13 @@ import org.sofka.personal.eventos.ManipuladorAgregado;
 import org.sofka.personal.eventos.ObservacionActualizada;
 import org.sofka.personal.eventos.PersonalCreado;
 
+import java.util.HashSet;
+
 public class PersonalChange extends EventChange {
     public PersonalChange(Personal personal) {
         apply((PersonalCreado event) -> {
             personal.bpm = event.getBpmPersonal();
+            personal.manipuladores = new HashSet<>();
         });
 
         apply((ObservacionActualizada event)->{
