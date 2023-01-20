@@ -32,9 +32,12 @@ class ActualizarContactoDeClienteUseCaseTest {
     public void actualizarContacto(){
         PedidoId pedidoId = PedidoId.of("idPedido");
         ClienteId clienteId = ClienteId.of("idCliente");
-        Contacto contacto = new Contacto("Rs","321","calle","Med");
+        Dieta dieta = new Dieta("arroz");
 
-        var command = new ActualizarContactoDeCliente(pedidoId, clienteId,contacto);
+        Contacto contacto = new Contacto("Rs","321","calle","Med");
+        Cliente cliente = new Cliente(clienteId,pedidoId,contacto,dieta);
+
+        var command = new ActualizarContactoDeCliente(pedidoId, clienteId,contacto,cliente);
 
         when(repository.getEventsBy("idPedido")).thenReturn(pedidos());
         useCase.addRepository(repository);

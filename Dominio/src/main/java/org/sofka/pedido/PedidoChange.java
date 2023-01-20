@@ -22,7 +22,7 @@ public class PedidoChange extends EventChange {
 
         });
         apply((ContactoDeClienteActualizado event)->{
-            pedido.actualizarContactoDeCliente(event.getClienteId(),event.getContacto());
+            pedido.cliente = event.getCliente();
         });
 
     }

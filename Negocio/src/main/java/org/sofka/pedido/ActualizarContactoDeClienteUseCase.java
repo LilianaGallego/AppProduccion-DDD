@@ -12,9 +12,9 @@ public class ActualizarContactoDeClienteUseCase extends UseCase<RequestCommand<A
         var command = actualizarContactoDeClienteRequestCommand.getCommand();
 
         var pedido = Pedido.from(command.getPedidoId(),repository().getEventsBy(command.getPedidoId().value()));
-        pedido.actualizarContactoDeCliente(command.getClienteId(), command.getContacto());
+        pedido.actualizarContactoDeCliente(command.getClienteId(), command.getContacto(), command.getCliente());
 
-        pedido.actualizarContactoDeCliente(command.getClienteId(),command.getContacto());
+        pedido.actualizarContactoDeCliente(command.getClienteId(),command.getContacto(),command.getCliente());
 
         emit().onResponse(new ResponseEvents(pedido.getUncommittedChanges()));
     }
