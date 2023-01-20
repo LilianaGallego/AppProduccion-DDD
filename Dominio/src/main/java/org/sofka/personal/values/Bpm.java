@@ -12,6 +12,7 @@ public class Bpm implements ValueObject<String> {
     public Bpm(String value) {
         this.value = Objects.requireNonNull(value);
     }
+
     @Override
     public String value() {
         return value;

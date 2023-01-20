@@ -2,7 +2,6 @@ package org.sofka.personal;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import org.sofka.insumo.Insumo;
 import org.sofka.insumo.values.InsumoId;
 import org.sofka.pedido.values.PedidoId;
 import org.sofka.personal.entidades.Jefe;
@@ -18,6 +17,7 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Personal extends AggregateEvent<PersonalId> {
+    protected PersonalId personalId;
     protected InsumoId insumoId;
     protected PedidoId pedidoId;
     protected Bpm bpm;
@@ -47,9 +47,8 @@ public class Personal extends AggregateEvent<PersonalId> {
     }
 
 
-    public void agregarJefe(JefeId jefeId, Experiencia experiencia){
-        Objects.requireNonNull(jefeId);
-        Objects.requireNonNull(experiencia);
+    public void agregarJefe( Experiencia experiencia){
+        var jefeId = new JefeId();
         appendChange(new JefeAgregado(jefeId,experiencia)).apply();
     }
 
