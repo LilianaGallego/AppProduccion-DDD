@@ -1,8 +1,9 @@
 package org.sofka.insumo.comandos;
 
 import co.com.sofka.domain.generic.Command;
+import org.sofka.insumo.values.Cantidad;
 import org.sofka.insumo.values.InsumoId;
-import org.sofka.insumo.values.ItemId;
+import org.sofka.insumo.values.Nombre;
 
 /**
  * Comando para agregar el item del insumo
@@ -18,24 +19,20 @@ public class AgregarItemDelItem extends Command {
      * Identificador del insumo
      */
     private final InsumoId insumoId;
-    /**
-     * Identificador del item
-     */
-    private final ItemId itemId;
+
     /**
      * Nombre del item insumo
      */
-    private final String nombre;
+    private final Nombre nombre;
     /**
      * Cantidad del item insumo
      */
-    private final String cantidad;
+    private final Cantidad cantidad;
 
     /**
      * Método constructor para agregar el item
      *
      * @param insumoId identificador del insumo
-     * @param itemId identificador del item
      * @param nombre nombre del item insumo
      * @param cantidad cantidad del item insumo
      *
@@ -44,10 +41,9 @@ public class AgregarItemDelItem extends Command {
      *
      * @since 1.0.0
      */
-    public AgregarItemDelItem(InsumoId insumoId, ItemId itemId, String nombre, String cantidad){
+    public AgregarItemDelItem(InsumoId insumoId, Nombre nombre, Cantidad cantidad){
 
         this.insumoId = insumoId;
-        this.itemId = itemId;
         this.nombre = nombre;
         this.cantidad = cantidad;
     }
@@ -65,18 +61,6 @@ public class AgregarItemDelItem extends Command {
     }
 
     /**
-     * Método para obtener el itemId
-     * @return retorna el itemId
-     * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
-     * @author Daniel Pérez Vitola <dapevi97@gmail.com>
-     *
-     * @since 1.0.0
-     */
-    public ItemId getItemId() {
-        return itemId;
-    }
-
-    /**
      * Método para obtener el nombre del item insumo
      * @return retorna el nombre del item insumo
      * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
@@ -84,7 +68,7 @@ public class AgregarItemDelItem extends Command {
      *
      * @since 1.0.0
      */
-    public String getNombre() {
+    public Nombre getNombre() {
         return nombre;
     }
 
@@ -96,7 +80,7 @@ public class AgregarItemDelItem extends Command {
      *
      * @since 1.0.0
      */
-    public String getCantidad() {
+    public Cantidad getCantidad() {
         return cantidad;
     }
 }

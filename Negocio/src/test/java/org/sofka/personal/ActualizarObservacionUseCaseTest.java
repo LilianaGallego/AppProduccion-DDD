@@ -14,16 +14,17 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.sofka.personal.comandos.ActualizarObservacion;
 import org.sofka.personal.comandos.CrearPersonal;
+import org.sofka.personal.eventos.JefeAgregado;
+import org.sofka.personal.eventos.ManipuladorAgregado;
 import org.sofka.personal.eventos.ObservacionActualizada;
 import org.sofka.personal.eventos.PersonalCreado;
-import org.sofka.personal.values.Bpm;
-import org.sofka.personal.values.PersonalId;
+import org.sofka.personal.values.*;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+@ExtendWith(MockitoExtension.class)
 class ActualizarObservacionUseCaseTest {
 
     @InjectMocks
@@ -33,14 +34,16 @@ class ActualizarObservacionUseCaseTest {
     private DomainEventRepository repository;
 
     @Test
-    void actualizarObservacion() {
+    void actualizarObservacionHappyPass() {
         PersonalId personalId = new PersonalId().of("ddd");
         Bpm bpm = new Bpm("observación actualizada");
 
         var command = new ActualizarObservacion( bpm,personalId);
 
         Mockito.when(repository.getEventsBy("ddd")).thenReturn(List.of(
-                new PersonalCreado(new Bpm("observación actualizada"))
+                new PersonalCreado(new Bpm("observación actualizada")),
+                new JefeAgregado(JefeId.of("dkkd"),new Experiencia("mmm")),
+                new ManipuladorAgregado(ManipuladorId.of("ooo"),new Seccion("mmm"))
                         ));
 
         useCase.addRepository(repository);

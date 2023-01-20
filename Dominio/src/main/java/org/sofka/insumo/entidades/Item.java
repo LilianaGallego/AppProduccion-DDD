@@ -1,7 +1,9 @@
 package org.sofka.insumo.entidades;
 
 import co.com.sofka.domain.generic.Entity;
+import org.sofka.insumo.values.Cantidad;
 import org.sofka.insumo.values.ItemId;
+import org.sofka.insumo.values.Nombre;
 
 /**
  * Entidad item del insumo
@@ -16,11 +18,11 @@ public class Item extends Entity<ItemId> {
     /**
      * Objeto valor nombre del item
      */
-    private String nombre;
+    private Nombre nombre;
     /**
      * Objeto valor cantidad del item
      */
-    private String cantidad;
+    private Cantidad cantidad;
 
     /**
      * Método constructor del item del insumo
@@ -34,7 +36,7 @@ public class Item extends Entity<ItemId> {
      *
      * @since 1.0.0
      */
-    public Item(ItemId itemId, String nombre, String cantidad) {
+    public Item(ItemId itemId, Nombre nombre, Cantidad cantidad) {
         super(itemId);
         this.nombre = nombre;
         this.cantidad = cantidad;

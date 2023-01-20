@@ -13,11 +13,11 @@ import java.util.Objects;
 
  * @since 1.0.0
  */
-public class Cantidad implements ValueObject<Double> {
+public class Cantidad implements ValueObject<String> {
     /**
      * peso del item insumo
      */
-    private final Double peso;
+    private final String peso;
 
     /**
      * Método constructor para la cantidad del item insumo
@@ -29,13 +29,13 @@ public class Cantidad implements ValueObject<Double> {
      *
      * @since 1.0.0
      */
-    public Cantidad(Double peso) {
+    public Cantidad(String peso) {
 
         this.peso = peso;
     }
 
     @Override
-    public Double value() {
+    public String value() {
         return peso;
     }
 
