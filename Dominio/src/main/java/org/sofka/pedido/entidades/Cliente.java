@@ -1,11 +1,14 @@
 package org.sofka.pedido.entidades;
 
+import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofka.domain.generic.Entity;
+import org.sofka.pedido.Pedido;
 import org.sofka.pedido.values.ClienteId;
 import org.sofka.pedido.values.Contacto;
 import org.sofka.pedido.values.Dieta;
 import org.sofka.pedido.values.PedidoId;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Cliente extends Entity<ClienteId> {
@@ -22,6 +25,7 @@ public class Cliente extends Entity<ClienteId> {
         this.dieta = dieta;
 
     }
+
 
     public void actualizarContacto(Contacto contacto){
         this.contacto = Objects.requireNonNull(contacto);

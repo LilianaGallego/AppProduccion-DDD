@@ -47,7 +47,7 @@ public class Pedido extends AggregateEvent<PedidoId> {
         appendChange(new ClienteDeClienteAgregado(clienteId, contacto)).apply();
     }
 
-    public void ActualizarContactoDeCliente(ClienteId clienteId, Contacto contacto){
+    public void actualizarContactoDeCliente(ClienteId clienteId, Contacto contacto){
         Objects.requireNonNull(clienteId);
         Objects.requireNonNull(contacto);
         appendChange(new ContactoDeClienteActualizado(clienteId, contacto)).apply();
