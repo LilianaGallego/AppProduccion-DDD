@@ -20,10 +20,6 @@ public class AgregarEstadoDeEstado extends Command {
      */
     private final InsumoId insumoId;
     /**
-     * Identificador del estado del insumo
-     */
-    private final EstadoId estadoId;
-    /**
      * Objeto valor del estado
      */
     private final Disponible disponible;
@@ -32,7 +28,6 @@ public class AgregarEstadoDeEstado extends Command {
      * Método constructor para agregar el estado
      *
      * @param insumoId identificador del insumo
-     * @param estadoId identificador del estado
      * @param disponible objeto valor del estado
      *
      * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
@@ -40,10 +35,9 @@ public class AgregarEstadoDeEstado extends Command {
      *
      * @since 1.0.0
      */
-    public AgregarEstadoDeEstado(InsumoId insumoId, EstadoId estadoId, Disponible disponible){
+    public AgregarEstadoDeEstado(InsumoId insumoId, Disponible disponible){
 
         this.insumoId = insumoId;
-        this.estadoId = estadoId;
         this.disponible = disponible;
     }
 
@@ -57,18 +51,6 @@ public class AgregarEstadoDeEstado extends Command {
      */
     public InsumoId getInsumoId() {
         return insumoId;
-    }
-
-    /**
-     * Método para obtener el estadoId
-     * @return retorna el estadoId
-     * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
-     * @author Daniel Pérez Vitola <dapevi97@gmail.com>
-     *
-     * @since 1.0.0
-     */
-    public EstadoId getEstadoId() {
-        return estadoId;
     }
 
     /**
