@@ -23,7 +23,8 @@ public class InsumoChange extends EventChange {
     public InsumoChange(Insumo insumo) {
         apply((InsumoCreado event) -> {
             insumo.clasificacion = event.getClasificacion();
-            insumo.items = new HashSet<>();
+            insumo.items = event.getItems();
+            insumo.estado = event.getEstado();
         });
 
         apply((EstadoDeEstadoAgregado event) -> {
@@ -35,7 +36,7 @@ public class InsumoChange extends EventChange {
         });
 
         apply((ItemDelItemAgregado event) -> {
-            insumo.items.add(new Item(event.getItemId(), event.getNombre(), event.getCantidad()));
+            insumo.items.add(new Item(event.getItemId(),event.getInsumoId() ,event.getNombre(), event.getCantidad()));
         });
     }
 }

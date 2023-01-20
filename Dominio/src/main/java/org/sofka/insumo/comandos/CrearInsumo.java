@@ -1,8 +1,12 @@
 package org.sofka.insumo.comandos;
 
 import co.com.sofka.domain.generic.Command;
+import org.sofka.insumo.entidades.Estado;
+import org.sofka.insumo.entidades.Item;
 import org.sofka.insumo.values.Clasificacion;
 import org.sofka.insumo.values.InsumoId;
+
+import java.util.Set;
 
 /**
  * Comando para crear el insumo
@@ -18,6 +22,8 @@ public class CrearInsumo extends Command {
      * Identificador del insumo
      */
     private final InsumoId insumoId;
+    private final Set<Item> items;
+    private final Estado estado;
     /**
      * Objeto Valor para clasificar el insumo
      */
@@ -34,7 +40,9 @@ public class CrearInsumo extends Command {
      *
      * @since 1.0.0
      */
-    public CrearInsumo(InsumoId insumoId, Clasificacion clasificacion) {
+    public CrearInsumo(InsumoId insumoId, Set<Item> items, Estado estado, Clasificacion clasificacion) {
+        this.items = items;
+        this.estado = estado;
         this.clasificacion = clasificacion;
         this.insumoId = insumoId;
     }
@@ -61,5 +69,13 @@ public class CrearInsumo extends Command {
      */
     public Clasificacion getClasificacion() {
         return clasificacion;
+    }
+
+    public Set<Item> getItems() {
+        return items;
+    }
+
+    public Estado getEstado() {
+        return estado;
     }
 }

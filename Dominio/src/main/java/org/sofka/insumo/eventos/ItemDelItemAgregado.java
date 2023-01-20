@@ -2,6 +2,7 @@ package org.sofka.insumo.eventos;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import org.sofka.insumo.values.Cantidad;
+import org.sofka.insumo.values.InsumoId;
 import org.sofka.insumo.values.ItemId;
 import org.sofka.insumo.values.Nombre;
 
@@ -20,6 +21,7 @@ public class ItemDelItemAgregado extends DomainEvent {
      * Identificador del item
      */
     private final ItemId itemId;
+    private final InsumoId insumoId;
     /**
      * Nombre del item insumo
      */
@@ -41,10 +43,11 @@ public class ItemDelItemAgregado extends DomainEvent {
      *
      * @since 1.0.0
      */
-    public ItemDelItemAgregado(ItemId itemId, Nombre nombre, Cantidad cantidad){
+    public ItemDelItemAgregado(ItemId itemId, InsumoId insumoId, Nombre nombre, Cantidad cantidad){
         super("org.sofka.insumo.eventos.ItemDelItemAgregado");
 
         this.itemId = itemId;
+        this.insumoId = insumoId;
         this.nombre = nombre;
         this.cantidad = cantidad;
     }
@@ -83,5 +86,9 @@ public class ItemDelItemAgregado extends DomainEvent {
      */
     public Cantidad getCantidad() {
         return cantidad;
+    }
+
+    public InsumoId getInsumoId() {
+        return insumoId;
     }
 }

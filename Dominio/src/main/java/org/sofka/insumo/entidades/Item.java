@@ -2,6 +2,7 @@ package org.sofka.insumo.entidades;
 
 import co.com.sofka.domain.generic.Entity;
 import org.sofka.insumo.values.Cantidad;
+import org.sofka.insumo.values.InsumoId;
 import org.sofka.insumo.values.ItemId;
 import org.sofka.insumo.values.Nombre;
 
@@ -15,6 +16,7 @@ import org.sofka.insumo.values.Nombre;
  * @since 1.0.0
  */
 public class Item extends Entity<ItemId> {
+    private final InsumoId insumoId;
     /**
      * Objeto valor nombre del item
      */
@@ -36,8 +38,9 @@ public class Item extends Entity<ItemId> {
      *
      * @since 1.0.0
      */
-    public Item(ItemId itemId, Nombre nombre, Cantidad cantidad) {
+    public Item(ItemId itemId, InsumoId insumoId, Nombre nombre, Cantidad cantidad) {
         super(itemId);
+        this.insumoId = insumoId;
         this.nombre = nombre;
         this.cantidad = cantidad;
     }

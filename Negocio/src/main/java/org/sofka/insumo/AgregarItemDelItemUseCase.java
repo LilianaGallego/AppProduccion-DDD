@@ -11,7 +11,7 @@ public class AgregarItemDelItemUseCase extends UseCase<RequestCommand<AgregarIte
         var command = agregarItemDelItemRequestCommand.getCommand();
         Insumo insumo = Insumo.from(command.getInsumoId(), repository().getEventsBy(command.getInsumoId().value()));
 
-        insumo.agregarItemDeItem(command.getNombre(), command.getCantidad());
+        insumo.agregarItemDeItem(command.getNombre(),command.getInsumoId() ,command.getCantidad());
 
         emit().onResponse(new ResponseEvents(insumo.getUncommittedChanges()));
 

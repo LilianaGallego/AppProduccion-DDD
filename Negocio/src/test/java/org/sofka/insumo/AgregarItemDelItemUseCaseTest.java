@@ -11,12 +11,11 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.sofka.insumo.comandos.AgregarItemDelItem;
+import org.sofka.insumo.entidades.Estado;
+import org.sofka.insumo.entidades.Item;
 import org.sofka.insumo.eventos.InsumoCreado;
 import org.sofka.insumo.eventos.ItemDelItemAgregado;
-import org.sofka.insumo.values.Cantidad;
-import org.sofka.insumo.values.Clasificacion;
-import org.sofka.insumo.values.InsumoId;
-import org.sofka.insumo.values.Nombre;
+import org.sofka.insumo.values.*;
 import org.sofka.personal.AgregarManipuladorDeManipuladorUseCase;
 import org.sofka.personal.comandos.AgregarManipuladorDeManipulador;
 import org.sofka.personal.eventos.ManipuladorAgregado;
@@ -25,7 +24,9 @@ import org.sofka.personal.values.Bpm;
 import org.sofka.personal.values.PersonalId;
 import org.sofka.personal.values.Seccion;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
@@ -68,8 +69,16 @@ class AgregarItemDelItemUseCaseTest {
 
     private List<DomainEvent> history() {
         InsumoId insumoId = InsumoId.of("ddddd");
+        Nombre nombre = new Nombre("carne");
+        Cantidad cantidad = new Cantidad("1 bolsa");
+        Item item = new Item(ItemId.of("idItem"),insumoId,nombre,cantidad);
+        Set<Item> items = new HashSet<>();
+        items.add(item);
         Clasificacion clasificacion = new Clasificacion("DDD");
-        var event = new InsumoCreado(clasificacion);
+        Disponible disponible = new Disponible(true);
+        Estado estado = new Estado(EstadoId.of("idEstado"), disponible);
+
+        var event = new InsumoCreado(insumoId,items,estado,clasificacion);
         event.setAggregateRootId(insumoId.value());
         return List.of(event);
     }

@@ -27,6 +27,8 @@ import java.util.Set;
  * @since 1.0.0
  */
 public class Insumo extends AggregateEvent<InsumoId> {
+    protected Set<Item> items;
+    protected Estado estado;
     /**
      * Objeto Valor para clasificar el insumo
      */
@@ -34,12 +36,12 @@ public class Insumo extends AggregateEvent<InsumoId> {
     /**
      * Relación 1 a muchos  con la entidad item
      */
-    protected Set<Item> items;
+
     /**
      * Relación 1 a 1 con la entidad Estado
      */
-    protected Estado estado;
-    //protected PedidoId pedidoId;
+
+
 
 
     /**
@@ -53,9 +55,11 @@ public class Insumo extends AggregateEvent<InsumoId> {
      *
      * @since 1.0.0
      */
-    public Insumo(InsumoId insumoId, Clasificacion clasificacion) {
+    public Insumo(InsumoId insumoId, Set<Item> items, Estado estado, Clasificacion clasificacion) {
         super(insumoId);
-        appendChange(new InsumoCreado(clasificacion)).apply();
+        this.items = items;
+        this.estado = estado;
+        appendChange(new InsumoCreado(insumoId,items,estado,clasificacion)).apply();
     }
 
     /**
@@ -102,12 +106,12 @@ public class Insumo extends AggregateEvent<InsumoId> {
      *
      * @since 1.0.0
      */
-    public void agregarItemDeItem(Nombre nombre, Cantidad cantidad){
+    public void agregarItemDeItem(Nombre nombre, InsumoId insumoId ,Cantidad cantidad){
         var itemId = new ItemId();
         Objects.requireNonNull(itemId);
         Objects.requireNonNull(nombre);
         Objects.requireNonNull(cantidad);
-        appendChange(new ItemDelItemAgregado(itemId, nombre, cantidad)).apply();
+        appendChange(new ItemDelItemAgregado(itemId, insumoId,nombre, cantidad)).apply();
 
     }
 

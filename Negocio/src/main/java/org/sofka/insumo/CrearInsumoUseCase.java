@@ -10,7 +10,7 @@ public class CrearInsumoUseCase extends UseCase<RequestCommand<CrearInsumo>, Res
     public void executeUseCase(RequestCommand<CrearInsumo> crearInsumoRequestCommand) {
         var command = crearInsumoRequestCommand.getCommand();
 
-        var insumo = new Insumo(command.getInsumoId(), command.getClasificacion());
+        var insumo = new Insumo(command.getInsumoId(),command.getItems(),command.getEstado(),command.getClasificacion());
 
         emit().onResponse(new ResponseEvents(insumo.getUncommittedChanges()));
     }

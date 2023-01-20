@@ -1,7 +1,12 @@
 package org.sofka.insumo.eventos;
 
 import co.com.sofka.domain.generic.DomainEvent;
+import org.sofka.insumo.entidades.Estado;
+import org.sofka.insumo.entidades.Item;
 import org.sofka.insumo.values.Clasificacion;
+import org.sofka.insumo.values.InsumoId;
+
+import java.util.Set;
 
 /**
  * Evento del insumo creado
@@ -13,6 +18,9 @@ import org.sofka.insumo.values.Clasificacion;
  * @since 1.0.0
  */
 public class InsumoCreado extends DomainEvent {
+    private final InsumoId insumoId;
+    private final Set<Item> items;
+    private final Estado estado;
     /**
      * Objeto Valor para clasificar el insumo
      */
@@ -28,8 +36,11 @@ public class InsumoCreado extends DomainEvent {
      *
      * @since 1.0.0
      */
-    public InsumoCreado(Clasificacion clasificacion) {
+    public InsumoCreado(InsumoId insumoId, Set<Item> items, Estado estado, Clasificacion clasificacion) {
         super("org.sofka.insumo.eventos.InsumoCreado");
+        this.insumoId = insumoId;
+        this.items = items;
+        this.estado = estado;
         this.clasificacion = clasificacion;
     }
 
@@ -43,5 +54,17 @@ public class InsumoCreado extends DomainEvent {
      */
     public Clasificacion getClasificacion() {
         return clasificacion;
+    }
+
+    public InsumoId getInsumoId() {
+        return insumoId;
+    }
+
+    public Set<Item> getItems() {
+        return items;
+    }
+
+    public Estado getEstado() {
+        return estado;
     }
 }
