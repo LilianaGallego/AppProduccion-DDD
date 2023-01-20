@@ -16,8 +16,7 @@ import org.sofka.pedido.entidades.Estado;
 import org.sofka.pedido.eventos.EstadoDeEstadoAgregado;
 import org.sofka.pedido.eventos.PedidoCreado;
 import org.sofka.pedido.values.*;
-import org.sofka.personal.eventos.PersonalCreado;
-import org.sofka.personal.values.Bpm;
+
 
 import java.util.List;
 

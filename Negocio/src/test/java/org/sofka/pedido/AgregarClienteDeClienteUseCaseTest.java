@@ -33,9 +33,10 @@ class AgregarClienteDeClienteUseCaseTest {
         PedidoId pedidoId = PedidoId.of("idPedido");
         ClienteId clienteId = ClienteId.of("idCliente");
         Contacto contacto = new Contacto("Rs","321","calle","Med");
+        Dieta dieta = new Dieta("arroz");
 
 
-        var command = new AgregarClienteDeCliente(pedidoId,clienteId,contacto);
+        var command = new AgregarClienteDeCliente(pedidoId,clienteId,contacto,dieta);
 
         when(repository.getEventsBy("idPedido")).thenReturn(history());
         useCase.addRepository(repository);

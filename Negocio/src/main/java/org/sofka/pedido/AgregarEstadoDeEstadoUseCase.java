@@ -10,7 +10,7 @@ public class AgregarEstadoDeEstadoUseCase extends UseCase<RequestCommand<Agregar
     public void executeUseCase(RequestCommand<AgregarEstadoDeEstado> agregarEstadoDeEstadoRequestCommand) {
         var command = agregarEstadoDeEstadoRequestCommand.getCommand();
         var pedido = Pedido.from(command.getPedidoId(),repository().getEventsBy(command.getPedidoId().value()));
-        pedido.agregarEstadoDeEstado(command.getEstadoId(),command.getCompletado());
+        pedido.agregarEstadoDeEstado(command.getEstadoId(),command.getPedidoId(),command.getCompletado());
 
         emit().onResponse(new ResponseEvents(pedido.getUncommittedChanges()));
     }

@@ -10,9 +10,9 @@ public class AgregarClienteDeClienteUseCase extends UseCase<RequestCommand<Agreg
     public void executeUseCase(RequestCommand<AgregarClienteDeCliente> agregarClienteDeClienteRequestCommand) {
         var command = agregarClienteDeClienteRequestCommand.getCommand();
         var pedido = Pedido.from(command.getPedidoId(),repository().getEventsBy(command.getPedidoId().value()));
-        pedido.agregarClienteDeCliente(command.getClienteId(), command.getContacto());
+        pedido.agregarClienteDeCliente(command.getClienteId(),command.getPedidoId(), command.getContacto(), command.getDieta());
 
-        pedido.agregarClienteDeCliente(command.getClienteId(), command.getContacto());
+        pedido.agregarClienteDeCliente(command.getClienteId(),command.getPedidoId() ,command.getContacto(), command.getDieta());
 
         emit().onResponse(new ResponseEvents(pedido.getUncommittedChanges()));
     }

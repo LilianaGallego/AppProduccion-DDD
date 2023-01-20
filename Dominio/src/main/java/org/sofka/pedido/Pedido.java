@@ -35,16 +35,16 @@ public class Pedido extends AggregateEvent<PedidoId> {
         return pedido;
     }
 
-    public void agregarEstadoDeEstado(EstadoId estadoId, Completado completado){
+    public void agregarEstadoDeEstado(EstadoId estadoId, PedidoId pedidoId, Completado completado){
         Objects.requireNonNull(estadoId);
         Objects.requireNonNull(completado);
-        appendChange(new EstadoDeEstadoAgregado(estadoId, completado)).apply();
+        appendChange(new EstadoDeEstadoAgregado(estadoId,pedidoId ,completado)).apply();
     }
 
-    public void agregarClienteDeCliente(ClienteId clienteId, Contacto contacto){
+    public void agregarClienteDeCliente(ClienteId clienteId,PedidoId pedidoId, Contacto contacto, Dieta dieta){
         Objects.requireNonNull(clienteId);
         Objects.requireNonNull(contacto);
-        appendChange(new ClienteDeClienteAgregado(clienteId, contacto)).apply();
+        appendChange(new ClienteDeClienteAgregado(clienteId,pedidoId, contacto,dieta)).apply();
     }
 
     public void actualizarContactoDeCliente(ClienteId clienteId, Contacto contacto){
