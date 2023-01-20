@@ -7,6 +7,9 @@ import org.sofka.insumo.eventos.DispobileDeEstadoCambiado;
 import org.sofka.insumo.eventos.EstadoDeEstadoAgregado;
 import org.sofka.insumo.eventos.InsumoCreado;
 import org.sofka.insumo.eventos.ItemDelItemAgregado;
+
+import java.util.HashSet;
+
 /**
  * Se aplican los eventos del dominio del Insumo
  *
@@ -20,6 +23,7 @@ public class InsumoChange extends EventChange {
     public InsumoChange(Insumo insumo) {
         apply((InsumoCreado event) -> {
             insumo.clasificacion = event.getClasificacion();
+            insumo.items = new HashSet<>();
         });
 
         apply((EstadoDeEstadoAgregado event) -> {

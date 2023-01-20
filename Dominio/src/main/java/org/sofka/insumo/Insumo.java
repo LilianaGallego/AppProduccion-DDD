@@ -11,6 +11,7 @@ import org.sofka.insumo.eventos.InsumoCreado;
 import org.sofka.insumo.eventos.ItemDelItemAgregado;
 import org.sofka.insumo.values.*;
 import org.sofka.pedido.values.PedidoId;
+import org.sofka.personal.entidades.Manipulador;
 
 import java.util.List;
 import java.util.Objects;
@@ -93,7 +94,6 @@ public class Insumo extends AggregateEvent<InsumoId> {
     /**
      * Método  para agregar el item
      *
-     * @param itemId identificador del item
      * @param nombre nombre del item insumo
      * @param cantidad cantidad del item insumo
      *
@@ -102,7 +102,8 @@ public class Insumo extends AggregateEvent<InsumoId> {
      *
      * @since 1.0.0
      */
-    public void agregarItemDeItem(ItemId itemId, String nombre, String cantidad){
+    public void agregarItemDeItem(Nombre nombre, Cantidad cantidad){
+        var itemId = new ItemId();
         Objects.requireNonNull(itemId);
         Objects.requireNonNull(nombre);
         Objects.requireNonNull(cantidad);
@@ -144,6 +145,10 @@ public class Insumo extends AggregateEvent<InsumoId> {
         Objects.requireNonNull(disponible);
         appendChange(new DispobileDeEstadoCambiado(estadoId,disponible)).apply();
 
+    }
+
+    public Set<Item> getItems(){
+        return items;
     }
 
 
