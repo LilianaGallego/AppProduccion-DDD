@@ -11,13 +11,15 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.sofka.insumo.comandos.AgregarEstadoDeEstado;
+import org.sofka.insumo.entidades.Estado;
+import org.sofka.insumo.entidades.Item;
 import org.sofka.insumo.eventos.EstadoDeEstadoAgregado;
 import org.sofka.insumo.eventos.InsumoCreado;
-import org.sofka.insumo.values.Clasificacion;
-import org.sofka.insumo.values.Disponible;
-import org.sofka.insumo.values.InsumoId;
+import org.sofka.insumo.values.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.mockito.Mockito.when;
 
@@ -54,11 +56,18 @@ class AgregarEstadoDeEstadoUseCaseTest {
     }
 
     private List<DomainEvent> history() {
-        Clasificacion clasificacion = new Clasificacion("DDD");
-        var event = new InsumoCreado(
-                clasificacion
-        );
-        event.setAggregateRootId("ddddd");
+        InsumoId insumoId = InsumoId.of("idInsumo");
+        Nombre nombre = new Nombre("carne");
+        Cantidad cantidad = new Cantidad("1 bolsa");
+        Item item = new Item(ItemId.of("idItem"),insumoId,nombre,cantidad);
+        Set<Item> items = new HashSet<>();
+        items.add(item);
+        Disponible disponible = new Disponible(false);
+        Estado estado = new Estado(EstadoId.of("idEstado"), disponible);
+        Clasificacion clasificacion = new Clasificacion("granos");
+
+        var event = new InsumoCreado(insumoId,items,estado,clasificacion);
+        event.setAggregateRootId("idInsumo");
         return List.of(event);
     }
 

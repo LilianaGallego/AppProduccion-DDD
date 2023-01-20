@@ -27,11 +27,6 @@ public class Cliente extends Entity<ClienteId> {
     }
 
 
-    public void actualizarContacto(Contacto contacto){
-        this.contacto = Objects.requireNonNull(contacto);
-
-    }
-
     public PedidoId getPedidoId() {
         return pedidoId;
     }
