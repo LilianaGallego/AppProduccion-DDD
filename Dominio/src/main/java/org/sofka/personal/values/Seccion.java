@@ -4,9 +4,31 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * Objeto valor Sección del manipulador
+ *
+ * @version 1.0.0 2023-01-19
+ * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+ * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+
+ * @since 1.0.0
+ */
 public class Seccion implements ValueObject<String> {
+    /**
+     * Sección del manipulador
+     */
     private final String value;
 
+    /**
+     * Método constructor para la sección del manipulador
+     *
+     * @param value sección para el objeto valor sección
+     *
+     * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+     * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+     *
+     * @since 1.0.0
+     */
     public Seccion(String value) {
         this.value = Objects.requireNonNull(value);
     }
