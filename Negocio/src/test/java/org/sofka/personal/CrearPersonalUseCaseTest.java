@@ -10,8 +10,19 @@ import org.sofka.personal.eventos.PersonalCreado;
 import org.sofka.personal.values.Bpm;
 import org.sofka.personal.values.PersonalId;
 
+/**
+ * Test del comportamiento crear personal
+ *
+ * @version 1.0.0 2023-01-19
+ * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+ * @author Daniel Pérez Vitola <dapevi97@gmail.com>
 
+ * @since 1.0.0
+ */
 class CrearPersonalUseCaseTest {
+    /**
+     * Variable de instancia del caso de uso crear personal
+     */
     private CrearPersonalUseCase useCase;
     @BeforeEach
     public void setUp() {
