@@ -22,13 +22,28 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
+
+/**
+ * Test del comportamiento Cambiar disponible de estado
+ *
+ * @version 1.0.0 2023-01-19
+ * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+ * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+
+ * @since 1.0.0
+ */
 
 @ExtendWith(MockitoExtension.class)
 class CambiarDisponibleDeEstadoUseCaseTest {
+    /**
+     * Variable de instancia del caso de uso Cambiar disponible de estado
+     */
     @InjectMocks
     private CambiarDisponibleDeEstadoUseCase useCase;
+    /**
+     * Variable de instancia del DomainEventRepository
+     */
     @Mock
     DomainEventRepository repository;
     @Test

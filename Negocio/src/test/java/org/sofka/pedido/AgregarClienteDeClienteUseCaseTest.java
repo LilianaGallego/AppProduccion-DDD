@@ -18,14 +18,27 @@ import org.sofka.pedido.eventos.PedidoCreado;
 import org.sofka.pedido.values.*;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
+/**
+ * Test del comportamiento Agregar cliente
+ *
+ * @version 1.0.0 2023-01-19
+ * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+ * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+
+ * @since 1.0.0
+ */
 @ExtendWith(MockitoExtension.class)
 class AgregarClienteDeClienteUseCaseTest {
+    /**
+     * Variable de instancia del caso de uso Agregar cliente
+     */
     @InjectMocks
     private AgregarClienteDeClienteUseCase useCase;
+    /**
+     * Variable de instancia del DomainEventRepository
+     */
     @Mock
     DomainEventRepository repository;
     @Test

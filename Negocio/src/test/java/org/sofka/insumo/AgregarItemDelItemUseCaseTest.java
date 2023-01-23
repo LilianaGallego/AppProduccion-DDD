@@ -16,13 +16,6 @@ import org.sofka.insumo.entidades.Item;
 import org.sofka.insumo.eventos.InsumoCreado;
 import org.sofka.insumo.eventos.ItemDelItemAgregado;
 import org.sofka.insumo.values.*;
-import org.sofka.personal.AgregarManipuladorDeManipuladorUseCase;
-import org.sofka.personal.comandos.AgregarManipuladorDeManipulador;
-import org.sofka.personal.eventos.ManipuladorAgregado;
-import org.sofka.personal.eventos.PersonalCreado;
-import org.sofka.personal.values.Bpm;
-import org.sofka.personal.values.PersonalId;
-import org.sofka.personal.values.Seccion;
 
 import java.util.HashSet;
 import java.util.List;
@@ -31,12 +24,28 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
+/**
+ * Test del comportamiento Agregar item
+ *
+ * @version 1.0.0 2023-01-19
+ * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+ * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+
+ * @since 1.0.0
+ */
+
 @ExtendWith(MockitoExtension.class)
 class AgregarItemDelItemUseCaseTest {
 
+    /**
+     * Variable de instancia del caso de uso Agregar item
+     */
     @InjectMocks
     private AgregarItemDelItemUseCase useCase;
 
+    /**
+     * Variable de instancia del DomainEventRepository
+     */
     @Mock
     private DomainEventRepository repository;
 

@@ -5,7 +5,26 @@ import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 import org.sofka.pedido.comandos.AgregarEstadoDeEstado;
 
+/**
+ * Caso de uso para agregar el estado
+ *
+ * @version 1.0.0 2023-01-19
+ * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+ * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+
+ * @since 1.0.0
+ */
 public class AgregarEstadoDeEstadoUseCase extends UseCase<RequestCommand<AgregarEstadoDeEstado>, ResponseEvents> {
+    /**
+     * Método para ejecutar el caso de uso
+     *
+     * @param agregarEstadoDeEstadoRequestCommand
+     *
+     * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+     * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+     *
+     * @since 1.0.0
+     */
     @Override
     public void executeUseCase(RequestCommand<AgregarEstadoDeEstado> agregarEstadoDeEstadoRequestCommand) {
         var command = agregarEstadoDeEstadoRequestCommand.getCommand();

@@ -23,11 +23,25 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
+/**
+ * Test del comportamiento agregar manipulador
+ *
+ * @version 1.0.0 2023-01-19
+ * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+ * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+
+ * @since 1.0.0
+ */
 @ExtendWith(MockitoExtension.class)
 class AgregarManipuladorDeManipuladorUseCaseTest {
+    /**
+     * Variable de instancia del caso de uso Agregar manipulador
+     */
     @InjectMocks
     private AgregarManipuladorDeManipuladorUseCase useCase;
-
+    /**
+     * Variable de instancia del DomainEventRepository
+     */
     @Mock
     private DomainEventRepository repository;
 

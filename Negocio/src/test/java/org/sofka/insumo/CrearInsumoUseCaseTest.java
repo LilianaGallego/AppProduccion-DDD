@@ -14,8 +14,20 @@ import org.sofka.insumo.values.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Test del comportamiento crear insumo
+ *
+ * @version 1.0.0 2023-01-19
+ * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+ * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+
+ * @since 1.0.0
+ */
 
 class CrearInsumoUseCaseTest {
+    /**
+     * Variable de instancia del caso de uso Crear insumo
+     */
     private CrearInsumoUseCase useCase;
     @BeforeEach
     public void setUp() {

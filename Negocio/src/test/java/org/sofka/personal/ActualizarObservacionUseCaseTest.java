@@ -19,12 +19,27 @@ import java.util.List;
 
 import static org.mockito.Mockito.when;
 
+/**
+ * Test del comportamiento actualizar observación del personal
+ *
+ * @version 1.0.0 2023-01-19
+ * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+ * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+
+ * @since 1.0.0
+ */
 @ExtendWith(MockitoExtension.class)
 class ActualizarObservacionUseCaseTest {
 
+    /**
+     * Variable de instancia del caso de uso Actualizar observación del personal
+     */
     @InjectMocks
     private ActualizarObservacionUseCase useCase;
 
+    /**
+     * Variable de instancia del DomainEventRepository
+     */
     @Mock
     private DomainEventRepository repository;
 

@@ -13,7 +13,19 @@ import org.sofka.pedido.values.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test del comportamiento crear pedido
+ *
+ * @version 1.0.0 2023-01-19
+ * @author Martha Liliana Gallego Murillo<lilianagallegom@gmail.com>
+ * @author Daniel Pérez Vitola <dapevi97@gmail.com>
+
+ * @since 1.0.0
+ */
 class CrearPedidoUseCaseTest {
+    /**
+     * Variable de instancia del caso de uso Crear pedido
+     */
     private CrearPedidoUseCase useCase;
 
     @BeforeEach
